@@ -1,0 +1,187 @@
+{
+  "metadata": {
+    "title": "Rocket Security — Your Security, Our Passion",
+    "description": "Rocket Security is a private security and guarding company based in Bamako, Mali. Private security, event security, remote surveillance, cash transport and more."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Our Services",
+    "recruitment": "Careers",
+    "contact": "Contact",
+    "quote": "Request a Quote"
+  },
+  "hero": {
+    "slogan": "Your Security, Our Passion",
+    "subtitle": "Professional security solutions for the protection of your assets, events, and people.",
+    "cta_quote": "Request a Quote",
+    "cta_services": "Our Services"
+  },
+  "services": {
+    "title": "Our Services",
+    "section_heading": "What We Do",
+    "section_description": "From private security to high-tech surveillance, we provide full-spectrum protection services designed to safeguard what matters most to you.",
+    "subtitle": "Comprehensive security solutions tailored to your needs",
+    "view_all": "View All Services",
+    "learn_more": "Learn more",
+    "request_quote": "Request a quote for this service",
+    "advantages": "Advantages",
+    "back_to_services": "Back to services",
+    "private_security": {
+      "name": "Private Security",
+      "short": "Professional protection of your premises and assets with qualified and trained agents.",
+      "description": "Our private security service offers you tailor-made protection for your commercial, industrial, and residential premises. Our agents are rigorously selected, trained, and equipped to ensure a deterrent presence and rapid intervention when needed.",
+      "advantages": ["Qualified and certified agents", "24/7 deterrent presence", "Regular activity reports", "Identified professional uniforms", "Permanent radio communication"]
+    },
+    "event_security": {
+      "name": "Event Security",
+      "short": "Complete security for your events: concerts, conferences, weddings, and gatherings.",
+      "description": "We provide security for all types of events, from corporate conferences to large public gatherings. Our team plans and implements a security system adapted to the nature and scale of your event.",
+      "advantages": ["Preliminary site assessment", "Rigorous access control", "Crowd management", "First aid team", "Coordination with authorities"]
+    },
+    "guarding": {
+      "name": "Guarding",
+      "short": "Permanent monitoring of your sites with dedicated agents, day and night.",
+      "description": "Our guarding service ensures continuous surveillance of your facilities. Our guards are trained to control access, monitor installations, and respond effectively to any abnormal situation.",
+      "advantages": ["24/7 surveillance", "Entry and exit control", "Regular verification rounds", "Key and access management", "Detailed logbook"]
+    },
+    "patrols": {
+      "name": "Patrols & Interventions",
+      "short": "Regular patrols and rapid interventions for the security of your sites.",
+      "description": "Our mobile teams carry out regular surveillance patrols on your sites and respond quickly in case of alert. This service is ideal for companies with multiple sites or requiring mobile surveillance.",
+      "advantages": ["Random and scheduled patrols", "Rapid alarm response", "Equipped and identified vehicles", "Report after each patrol", "Multi-site coverage"]
+    },
+    "remote_surveillance": {
+      "name": "Remote Surveillance",
+      "short": "Remote monitoring of your premises using cutting-edge technology.",
+      "description": "Our remote surveillance center monitors your facilities in real-time through a network of cameras and sensors. In case of intrusion or anomaly, our operators immediately trigger intervention procedures.",
+      "advantages": ["Real-time video surveillance", "Automatic intrusion detection", "Immediate alert response", "Video recording and archiving", "Remote camera access"]
+    },
+    "k9_mobile": {
+      "name": "Mobile Security / K-9 Units",
+      "short": "Mobile units and K-9 handlers for enhanced and deterrent security.",
+      "description": "Our K-9 teams combine the effectiveness of trained dogs with the expertise of professional handlers. This solution offers a superior level of security, particularly suited to large sites, warehouses, and industrial zones.",
+      "advantages": ["Trained and certified dogs", "Experienced handlers", "Maximum deterrent effect", "Enhanced intrusion detection", "Mobile patrols with vehicle"]
+    },
+    "cash_transport": {
+      "name": "Cash Transport",
+      "short": "Secure transport of your valuables and funds with armored vehicles.",
+      "description": "Our cash transport service guarantees the secure transport of your valuables. With armored vehicles, trained teams, and strict protocols, we ensure the protection of your financial assets from collection to delivery point.",
+      "advantages": ["Armored and secure vehicles", "Trained and armed teams", "Strict security protocols", "Complete transfer traceability", "All-risk insurance"]
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "A trusted security company serving Mali",
+    "story_title": "Our Story",
+    "story_text": "Rocket Security is a private security company based in Bamako, Mali. Founded with the vision of providing top-tier security services, we have grown to become a major player in private security in Mali. Our commitment to excellence and our passion for protection set us apart in the industry.",
+    "mission_title": "Our Mission",
+    "mission_text": "To protect people, property, and events with professionalism, integrity, and dedication. We are committed to providing tailored and effective security solutions to each of our clients.",
+    "values_title": "Our Values",
+    "values": {
+      "integrity": { "title": "Integrity", "text": "We act with honesty and transparency in all our missions." },
+      "excellence": { "title": "Excellence", "text": "We strive for excellence in every service we provide." },
+      "reliability": { "title": "Reliability", "text": "Our clients can count on us 24 hours a day, 7 days a week." },
+      "professionalism": { "title": "Professionalism", "text": "Our agents are trained to the highest standards of the profession." }
+    },
+    "stats": {
+      "label": "Our Impact",
+      "heading": "Numbers That Speak",
+      "description": "Over a decade of dedicated service protecting people, businesses, and assets across Mali.",
+      "years": "Years of experience",
+      "agents": "Deployed agents",
+      "clients": "Satisfied clients",
+      "sites": "Protected sites"
+    }
+  },
+  "team_showcase": {
+    "label": "Our Team",
+    "heading": "Professionals dedicated to your protection",
+    "description": "Our strength lies in our agents: rigorously selected, trained to the highest standards, and equipped to handle any situation. Every member of Rocket Security embodies our commitment to excellence.",
+    "trained": "Agents trained and certified to international standards",
+    "team": "500+ agents deployed across Mali",
+    "certified": "State-certified security company",
+    "cta": "Discover our story",
+    "alt_team": "Rocket Security team",
+    "alt_guard": "Rocket Security guard",
+    "alt_meeting": "Rocket Security team meeting"
+  },
+  "trust": {
+    "title": "They Trust Us",
+    "subtitle": "Leading companies and institutions entrust us with their security"
+  },
+  "cta": {
+    "label": "Take Action",
+    "title": "Protect your business today",
+    "subtitle": "Contact us for a free assessment of your security needs",
+    "button": "Contact us"
+  },
+  "recruitment": {
+    "title": "Careers",
+    "subtitle": "Join the Rocket Security team",
+    "why_title": "Why join us?",
+    "why_items": {
+      "training": { "title": "Ongoing training", "text": "Benefit from regular training programs to develop your skills." },
+      "career": { "title": "Career growth", "text": "Advancement opportunities within a fast-growing company." },
+      "equipment": { "title": "Professional equipment", "text": "Work with quality equipment and professional uniforms." },
+      "team": { "title": "Team spirit", "text": "Join a close-knit and dynamic team dedicated to security." }
+    },
+    "profiles_title": "Positions available",
+    "profiles": {
+      "agent": { "title": "Security Agent", "text": "Surveillance and protection of client sites" },
+      "supervisor": { "title": "Team Leader", "text": "Coordination and supervision of security operations" },
+      "k9_handler": { "title": "K-9 Handler", "text": "Patrols and security with canine unit" },
+      "driver": { "title": "Secure Driver", "text": "Cash transport and secure escort" },
+      "operator": { "title": "Surveillance Operator", "text": "Video monitoring and alert management" }
+    },
+    "form_title": "Apply now",
+    "form": {
+      "name": "Full name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "position": "Desired position",
+      "select_position": "Select a position",
+      "cv": "Resume (PDF)",
+      "cv_help": "Upload your resume in PDF format (max 5 MB)",
+      "message": "Message (optional)",
+      "submit": "Submit application",
+      "success": "Your application has been submitted successfully! We will contact you soon.",
+      "error": "An error occurred. Please try again."
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We are at your disposal to answer all your questions",
+    "info_title": "Our details",
+    "address": "Faladié Extension EST, Airport Road, Bamako, Mali",
+    "phone_numbers": ["84 40 40 06", "84 40 40 03", "90 95 95 51"],
+    "email": "contact@rocketsecurity.net",
+    "hours_title": "Hours",
+    "hours": "Available 24/7",
+    "form_title": "Send us a message",
+    "form": {
+      "name": "Full name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "subject": "Subject",
+      "subjects": {
+        "general": "General inquiry",
+        "quote": "Quote request",
+        "partnership": "Partnership",
+        "other": "Other"
+      },
+      "message": "Your message",
+      "submit": "Send message",
+      "success": "Your message has been sent successfully! We will get back to you as soon as possible.",
+      "error": "An error occurred. Please try again."
+    }
+  },
+  "footer": {
+    "description": "Rocket Security is your trusted partner for all your private security needs in Mali.",
+    "quick_links": "Quick links",
+    "services": "Services",
+    "contact_us": "Contact us",
+    "rights": "All rights reserved.",
+    "address": "Faladié Extension EST, Airport Road, Bamako"
+  }
+}
