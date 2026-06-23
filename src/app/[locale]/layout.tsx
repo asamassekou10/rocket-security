@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Oswald, Inter, Barlow_Condensed } from 'next/font/google';
@@ -9,6 +9,7 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { JsonLd } from '@/components/layout/JsonLd';
 import { SplashScreen } from '@/components/ui/SplashScreen';
+import { MobileContactBar } from '@/components/layout/MobileContactBar';
 
 const oswald = Oswald({
   subsets: ['latin'],
@@ -30,6 +31,10 @@ const barlowCondensed = Barlow_Condensed({
 });
 
 type Params = Promise<{ locale: string }>;
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export async function generateMetadata({
   params,
@@ -74,6 +79,8 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  setRequestLocale(locale);
+
   const messages = await getMessages();
 
   return (
@@ -83,8 +90,9 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <SplashScreen />
           <Navbar />
-          <main className="min-h-screen">{children}</main>
+          <main className="min-h-screen pb-16 lg:pb-0">{children}</main>
           <Footer />
+          <MobileContactBar />
         </NextIntlClientProvider>
       </body>
     </html>

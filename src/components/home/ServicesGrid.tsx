@@ -11,16 +11,15 @@ import Image from 'next/image';
 export function ServicesGrid() {
   const t = useTranslations('services');
 
-  // Show first 4 services in the 2x2 grid
-  const gridServices = services.slice(0, 4);
+  const gridServices = services.slice(0, 6);
 
   return (
-    <section className="py-24 bg-rocket-dark relative overflow-hidden">
+    <section className="relative overflow-hidden bg-rocket-dark py-16 sm:py-24">
       {/* Subtle gradient orb */}
       <div className="gradient-orb gradient-orb-yellow w-[400px] h-[400px] -bottom-40 -right-20 opacity-20" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 items-start">
           {/* Left side — intro text + button */}
           <div className="lg:sticky lg:top-32">
             <ScrollReveal direction="left">
@@ -30,13 +29,13 @@ export function ServicesGrid() {
               </p>
 
               {/* Section heading */}
-              <h2 className="font-[family-name:var(--font-heading)] text-5xl sm:text-6xl font-semibold uppercase tracking-tight text-rocket-white leading-[0.95]">
+              <h2 className="font-[family-name:var(--font-heading)] text-4xl sm:text-6xl font-semibold uppercase tracking-tight text-rocket-white leading-[0.95]">
                 {t('section_heading')}
               </h2>
               <div className="mt-4 h-1 w-16 bg-rocket-yellow" />
 
               {/* Description */}
-              <p className="mt-6 text-rocket-gray-400 leading-relaxed text-lg font-[family-name:var(--font-body)]">
+              <p className="mt-5 text-rocket-gray-400 leading-relaxed text-base sm:mt-6 sm:text-lg font-[family-name:var(--font-body)]">
                 {t('section_description')}
               </p>
 
@@ -52,7 +51,7 @@ export function ServicesGrid() {
           </div>
 
           {/* Right side — 2x2 service grid with images */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-3">
             {gridServices.map((service, index) => {
               const Icon = service.icon;
               return (
@@ -65,7 +64,7 @@ export function ServicesGrid() {
                 >
                   <Link
                     href={`/services/${service.slug}`}
-                    className="group block rounded-lg overflow-hidden relative h-56 sm:h-64"
+                    className="group block rounded-lg overflow-hidden relative h-48 sm:h-64 lg:h-72 xl:h-64"
                   >
                     {/* Background image */}
                     <Image
@@ -73,23 +72,24 @@ export function ServicesGrid() {
                       alt={t(`${service.translationKey}.name`)}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      style={{ objectPosition: service.imagePosition ?? 'center' }}
                       sizes="(max-width: 640px) 100vw, 25vw"
                     />
                     {/* Dark overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-all duration-500 group-hover:from-black/90" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-transparent transition-all duration-500 group-hover:from-black/90" />
 
                     {/* Content overlay */}
-                    <div className="absolute inset-0 flex flex-col justify-end p-5">
+                    <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-5">
                       {/* Icon */}
                       <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg border border-rocket-yellow/30 bg-rocket-black/50 text-rocket-yellow backdrop-blur-sm">
                         <Icon size={20} />
                       </div>
                       {/* Title */}
-                      <h3 className="font-[family-name:var(--font-heading)] text-xl font-semibold text-rocket-white group-hover:text-rocket-yellow transition-colors duration-300 uppercase">
+                      <h3 className="font-[family-name:var(--font-heading)] text-lg font-semibold text-rocket-white group-hover:text-rocket-yellow transition-colors duration-300 uppercase sm:text-xl">
                         {t(`${service.translationKey}.name`)}
                       </h3>
-                      {/* Short desc — slides up on hover */}
-                      <p className="text-sm text-rocket-gray-300 leading-snug mt-1 opacity-0 translate-y-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 line-clamp-2">
+                      {/* Short desc — visible on touch screens, animated on larger hover devices */}
+                      <p className="mt-1 line-clamp-2 text-sm leading-snug text-rocket-gray-300 opacity-100 transition-all duration-500 sm:translate-y-2 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100">
                         {t(`${service.translationKey}.short`)}
                       </p>
                     </div>

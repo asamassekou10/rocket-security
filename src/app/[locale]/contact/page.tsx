@@ -19,13 +19,29 @@ export default function ContactPage() {
   const t = useTranslations('contact');
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setSubmitted(true);
-    setIsSubmitting(false);
+    setSubmitError(false);
+
+    try {
+      const response = await fetch('/api/submit.php', {
+        method: 'POST',
+        body: new FormData(e.currentTarget),
+      });
+
+      if (!response.ok) {
+        throw new Error('Form submission failed');
+      }
+
+      setSubmitted(true);
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -174,6 +190,11 @@ export default function ContactPage() {
                     </h2>
 
                     <form onSubmit={handleSubmit} className="space-y-6">
+                      <input type="hidden" name="form_type" value="contact" />
+                      <div className="hidden" aria-hidden="true">
+                        <label htmlFor="contact-website">Website</label>
+                        <input id="contact-website" type="text" name="website" tabIndex={-1} autoComplete="off" />
+                      </div>
                       {/* Name & Email */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
@@ -182,6 +203,7 @@ export default function ContactPage() {
                           </label>
                           <input
                             type="text"
+                            name="name"
                             required
                             className="w-full rounded-lg border border-rocket-gray-700 bg-rocket-gray-800 px-4 py-3 text-rocket-white placeholder-rocket-gray-400 transition-colors focus:border-rocket-yellow focus:outline-none focus:ring-1 focus:ring-rocket-yellow"
                           />
@@ -192,6 +214,7 @@ export default function ContactPage() {
                           </label>
                           <input
                             type="email"
+                            name="email"
                             required
                             className="w-full rounded-lg border border-rocket-gray-700 bg-rocket-gray-800 px-4 py-3 text-rocket-white placeholder-rocket-gray-400 transition-colors focus:border-rocket-yellow focus:outline-none focus:ring-1 focus:ring-rocket-yellow"
                           />
@@ -206,6 +229,7 @@ export default function ContactPage() {
                           </label>
                           <input
                             type="tel"
+                            name="phone"
                             className="w-full rounded-lg border border-rocket-gray-700 bg-rocket-gray-800 px-4 py-3 text-rocket-white placeholder-rocket-gray-400 transition-colors focus:border-rocket-yellow focus:outline-none focus:ring-1 focus:ring-rocket-yellow"
                           />
                         </div>
@@ -214,6 +238,7 @@ export default function ContactPage() {
                             {t('form.subject')} *
                           </label>
                           <select
+                            name="subject"
                             required
                             className="w-full rounded-lg border border-rocket-gray-700 bg-rocket-gray-800 px-4 py-3 text-rocket-white transition-colors focus:border-rocket-yellow focus:outline-none focus:ring-1 focus:ring-rocket-yellow"
                           >
@@ -231,11 +256,18 @@ export default function ContactPage() {
                           {t('form.message')} *
                         </label>
                         <textarea
+                          name="message"
                           rows={5}
                           required
                           className="w-full rounded-lg border border-rocket-gray-700 bg-rocket-gray-800 px-4 py-3 text-rocket-white placeholder-rocket-gray-400 transition-colors focus:border-rocket-yellow focus:outline-none focus:ring-1 focus:ring-rocket-yellow resize-none"
                         />
                       </div>
+
+                      {submitError && (
+                        <p className="text-sm text-red-400" role="alert">
+                          {t('form.error')}
+                        </p>
+                      )}
 
                       {/* Submit */}
                       <button

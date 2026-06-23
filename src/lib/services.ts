@@ -14,6 +14,7 @@ export interface ServiceInfo {
   translationKey: string;
   icon: LucideIcon;
   image: string;
+  imagePosition?: string;
 }
 
 export const services: ServiceInfo[] = [
@@ -22,24 +23,27 @@ export const services: ServiceInfo[] = [
     translationKey: 'private_security',
     icon: Shield,
     image: '/images/RS4.jpg',
+    imagePosition: 'center top',
   },
   {
     slug: 'event-security',
     translationKey: 'event_security',
     icon: CalendarCheck,
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop',
+    image: '/images/PHOTO-2026-03-17-05-14-08.jpg',
   },
   {
     slug: 'guarding',
     translationKey: 'guarding',
     icon: Building2,
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop',
+    image: '/images/PHOTO-2026-03-17-05-14-09.jpg',
+    imagePosition: 'center top',
   },
   {
     slug: 'patrols',
     translationKey: 'patrols',
     icon: Car,
-    image: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&h=600&fit=crop',
+    image: '/images/PHOTO-2026-03-17-05-13-54.jpg',
+    imagePosition: 'center top',
   },
   {
     slug: 'remote-surveillance',
@@ -51,13 +55,15 @@ export const services: ServiceInfo[] = [
     slug: 'k9-mobile',
     translationKey: 'k9_mobile',
     icon: Dog,
-    image: 'https://images.unsplash.com/photo-1585241645927-c7a8e5840c42?w=800&h=600&fit=crop',
+    image: '/images/PHOTO-2026-03-17-05-14-03.jpg',
+    imagePosition: 'center top',
   },
   {
     slug: 'cash-transport',
     translationKey: 'cash_transport',
     icon: Truck,
-    image: 'https://images.unsplash.com/photo-1618044733300-9472054094ee?w=800&h=600&fit=crop',
+    image: '/images/PHOTO-2026-03-17-05-14-12%202.jpg',
+    imagePosition: 'center top',
   },
 ];
 

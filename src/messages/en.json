@@ -15,7 +15,13 @@
     "slogan": "Your Security, Our Passion",
     "subtitle": "Professional security solutions for the protection of your assets, events, and people.",
     "cta_quote": "Request a Quote",
-    "cta_services": "Our Services"
+    "cta_services": "Our Services",
+    "proof": {
+      "approved": "Certified company",
+      "agents": "500+ agents",
+      "availability": "24/7 service",
+      "coverage": "Mali coverage"
+    }
   },
   "services": {
     "title": "Our Services",
@@ -110,6 +116,72 @@
     "title": "They Trust Us",
     "subtitle": "Leading companies and institutions entrust us with their security"
   },
+  "faq": {
+    "label": "FAQ",
+    "heading": "What clients often ask us",
+    "description": "A few quick answers to help you understand how we work before requesting a quote.",
+    "items": {
+      "coverage": {
+        "question": "Do you only operate in Bamako?",
+        "answer": "Rocket Security operates in Bamako and can organize security coverage in other regions of Mali depending on the mission, duration, and operational needs."
+      },
+      "quote": {
+        "question": "How do I get a quote?",
+        "answer": "You can contact us by phone, email, or through the website form. We assess the site type, schedule, risks, and number of agents needed before proposing a solution."
+      },
+      "availability": {
+        "question": "Are services available 24/7?",
+        "answer": "Yes. Guarding, surveillance, patrols, and interventions can be organized day and night, including weekends and holidays."
+      },
+      "events": {
+        "question": "Do you secure one-time events?",
+        "answer": "Yes. We can handle access control, crowd flow, sensitive area monitoring, and coordination with event managers."
+      },
+      "reports": {
+        "question": "Do we receive follow-up after the mission?",
+        "answer": "Depending on the planned setup, our teams can provide reports, logbooks, and incident updates so you maintain clear visibility on the mission."
+      },
+      "recruitment": {
+        "question": "How can I apply to Rocket Security?",
+        "answer": "Candidates can use the Careers page to send their information and resume. Profiles are reviewed according to operational needs and selection criteria."
+      }
+    }
+  },
+  "operations": {
+    "label": "Sectors served",
+    "heading": "Security plans adapted to real field conditions",
+    "description": "We secure sensitive sites, companies, events, and mobile operations with a structured, supervised, and responsive approach.",
+    "coverage": "Bamako and regions of Mali",
+    "team_note": "Every mission is supported by supervision teams and clearly identified agents.",
+    "method_label": "Our method",
+    "method_heading": "A clear mission, from assessment to follow-up",
+    "sectors": {
+      "banks": "Banks and institutions",
+      "mines": "Mines and worksites",
+      "events": "Events",
+      "businesses": "Companies and offices",
+      "retail": "Retail locations",
+      "industrial": "Industrial sites"
+    },
+    "steps": {
+      "audit": {
+        "title": "Risk assessment",
+        "text": "We evaluate the site, access points, sensitive hours, and protection priorities."
+      },
+      "deployment": {
+        "title": "Deployment",
+        "text": "We put the right agents, equipment, and operational instructions in place."
+      },
+      "supervision": {
+        "title": "Supervision",
+        "text": "Teams stay coordinated through radio, patrols, controls, and alert escalation."
+      },
+      "reporting": {
+        "title": "Client follow-up",
+        "text": "You receive clear reports so you keep visibility on the mission."
+      }
+    }
+  },
   "cta": {
     "label": "Take Action",
     "title": "Protect your business today",
@@ -183,5 +255,9 @@
     "contact_us": "Contact us",
     "rights": "All rights reserved.",
     "address": "Faladié Extension EST, Airport Road, Bamako"
+  },
+  "mobile_contact": {
+    "call": "Call",
+    "email": "Email"
   }
 }

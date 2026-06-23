@@ -39,13 +39,29 @@ export default function RecruitmentPage() {
   const t = useTranslations('recruitment');
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setSubmitted(true);
-    setIsSubmitting(false);
+    setSubmitError(false);
+
+    try {
+      const response = await fetch('/api/submit.php', {
+        method: 'POST',
+        body: new FormData(e.currentTarget),
+      });
+
+      if (!response.ok) {
+        throw new Error('Form submission failed');
+      }
+
+      setSubmitted(true);
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -203,7 +219,12 @@ export default function RecruitmentPage() {
             </motion.div>
           ) : (
             <ScrollReveal>
-              <form onSubmit={handleSubmit} className="space-y-6 rounded-2xl glass p-8 md:p-10">
+              <form onSubmit={handleSubmit} encType="multipart/form-data" className="space-y-6 rounded-2xl glass p-8 md:p-10">
+                <input type="hidden" name="form_type" value="recruitment" />
+                <div className="hidden" aria-hidden="true">
+                  <label htmlFor="recruitment-website">Website</label>
+                  <input id="recruitment-website" type="text" name="website" tabIndex={-1} autoComplete="off" />
+                </div>
                 {/* Name */}
                 <div>
                   <label className="block text-sm font-medium text-rocket-gray-300 mb-2 font-[family-name:var(--font-body)]">
@@ -211,6 +232,7 @@ export default function RecruitmentPage() {
                   </label>
                   <input
                     type="text"
+                    name="name"
                     required
                     className="w-full rounded-lg border border-rocket-gray-700 bg-rocket-gray-800 px-4 py-3 text-rocket-white placeholder-rocket-gray-400 transition-colors focus:border-rocket-yellow focus:outline-none focus:ring-1 focus:ring-rocket-yellow font-[family-name:var(--font-body)]"
                   />
@@ -224,6 +246,7 @@ export default function RecruitmentPage() {
                     </label>
                     <input
                       type="email"
+                      name="email"
                       required
                       className="w-full rounded-lg border border-rocket-gray-700 bg-rocket-gray-800 px-4 py-3 text-rocket-white placeholder-rocket-gray-400 transition-colors focus:border-rocket-yellow focus:outline-none focus:ring-1 focus:ring-rocket-yellow font-[family-name:var(--font-body)]"
                     />
@@ -234,6 +257,7 @@ export default function RecruitmentPage() {
                     </label>
                     <input
                       type="tel"
+                      name="phone"
                       required
                       className="w-full rounded-lg border border-rocket-gray-700 bg-rocket-gray-800 px-4 py-3 text-rocket-white placeholder-rocket-gray-400 transition-colors focus:border-rocket-yellow focus:outline-none focus:ring-1 focus:ring-rocket-yellow font-[family-name:var(--font-body)]"
                     />
@@ -246,6 +270,7 @@ export default function RecruitmentPage() {
                     {t('form.position')} *
                   </label>
                   <select
+                    name="position"
                     required
                     className="w-full rounded-lg border border-rocket-gray-700 bg-rocket-gray-800 px-4 py-3 text-rocket-white transition-colors focus:border-rocket-yellow focus:outline-none focus:ring-1 focus:ring-rocket-yellow font-[family-name:var(--font-body)]"
                   >
@@ -268,6 +293,7 @@ export default function RecruitmentPage() {
                     <p className="text-sm text-rocket-gray-400 font-[family-name:var(--font-body)]">{t('form.cv_help')}</p>
                     <input
                       type="file"
+                      name="cv"
                       accept=".pdf"
                       required
                       className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
@@ -281,10 +307,17 @@ export default function RecruitmentPage() {
                     {t('form.message')}
                   </label>
                   <textarea
+                    name="message"
                     rows={4}
                     className="w-full rounded-lg border border-rocket-gray-700 bg-rocket-gray-800 px-4 py-3 text-rocket-white placeholder-rocket-gray-400 transition-colors focus:border-rocket-yellow focus:outline-none focus:ring-1 focus:ring-rocket-yellow resize-none font-[family-name:var(--font-body)]"
                   />
                 </div>
+
+                {submitError && (
+                  <p className="text-sm text-red-400" role="alert">
+                    {t('form.error')}
+                  </p>
+                )}
 
                 {/* Submit */}
                 <button

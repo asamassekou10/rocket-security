@@ -126,6 +126,12 @@ export function Navbar() {
                   </Link>
                 );
               })}
+              <Link
+                href="/contact"
+                className="mt-3 flex min-h-12 items-center justify-center rounded-lg bg-rocket-yellow px-4 text-sm font-bold uppercase tracking-wider text-rocket-black"
+              >
+                {t('quote')}
+              </Link>
             </nav>
           </motion.div>
         )}

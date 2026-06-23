@@ -3,13 +3,30 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Banknote, Building2, CalendarDays, ClipboardCheck, Factory, Radio, ShieldCheck, Store, Target, Warehouse } from 'lucide-react';
 import { services } from '@/lib/services';
 import { CTABanner } from '@/components/home/CTABanner';
 import Image from 'next/image';
 
+const sectors = [
+  { icon: Banknote, key: 'banks' },
+  { icon: Factory, key: 'mines' },
+  { icon: CalendarDays, key: 'events' },
+  { icon: Building2, key: 'businesses' },
+  { icon: Store, key: 'retail' },
+  { icon: Warehouse, key: 'industrial' },
+];
+
+const methodSteps = [
+  { icon: Target, key: 'audit' },
+  { icon: ShieldCheck, key: 'deployment' },
+  { icon: Radio, key: 'supervision' },
+  { icon: ClipboardCheck, key: 'reporting' },
+];
+
 export default function ServicesPage() {
   const t = useTranslations('services');
+  const operations = useTranslations('operations');
 
   return (
     <>
@@ -43,6 +60,38 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Sectors */}
+      <section className="bg-rocket-black py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="font-[family-name:var(--font-accent)] mb-3 text-sm uppercase tracking-[0.3em] text-rocket-yellow">
+                {operations('label')}
+              </p>
+              <h2 className="font-[family-name:var(--font-heading)] text-3xl font-semibold uppercase tracking-tight text-white sm:text-4xl">
+                {operations('heading')}
+              </h2>
+            </div>
+            <p className="max-w-xl text-sm leading-6 text-rocket-gray-400 sm:text-right">
+              {operations('description')}
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {sectors.map((sector) => {
+              const Icon = sector.icon;
+              return (
+                <div key={sector.key} className="flex items-center gap-4 rounded-lg border border-white/10 bg-white/[0.04] p-5">
+                  <Icon size={22} className="shrink-0 text-rocket-yellow" />
+                  <span className="font-[family-name:var(--font-heading)] text-lg font-semibold uppercase tracking-wide text-white">
+                    {operations(`sectors.${sector.key}`)}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Services Grid - Detailed */}
       <section className="py-24 bg-rocket-dark relative overflow-hidden">
         <div className="gradient-orb gradient-orb-amber w-[500px] h-[500px] bottom-40 -left-40 opacity-30" />
@@ -72,6 +121,7 @@ export default function ServicesPage() {
                           width={400}
                           height={300}
                           className="object-cover w-full h-full"
+                          style={{ objectPosition: service.imagePosition ?? 'center' }}
                           sizes="(max-width: 768px) 100vw, 33vw"
                         />
                       </div>
@@ -97,6 +147,41 @@ export default function ServicesPage() {
                     </div>
                   </Link>
                 </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Method */}
+      <section className="bg-rocket-black py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-10">
+            <p className="font-[family-name:var(--font-accent)] mb-3 text-sm uppercase tracking-[0.3em] text-rocket-yellow">
+              {operations('method_label')}
+            </p>
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl font-semibold uppercase tracking-tight text-white sm:text-4xl">
+              {operations('method_heading')}
+            </h2>
+          </div>
+          <div className="grid gap-5 md:grid-cols-4">
+            {methodSteps.map((step, index) => {
+              const Icon = step.icon;
+              return (
+                <div key={step.key} className="rounded-lg border border-white/10 bg-white/[0.04] p-6">
+                  <div className="mb-8 flex items-center justify-between">
+                    <Icon size={24} className="text-rocket-yellow" />
+                    <span className="font-[family-name:var(--font-heading)] text-4xl font-bold text-white/10">
+                      0{index + 1}
+                    </span>
+                  </div>
+                  <h3 className="font-[family-name:var(--font-heading)] text-xl font-semibold uppercase tracking-wide text-white">
+                    {operations(`steps.${step.key}.title`)}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-rocket-gray-400">
+                    {operations(`steps.${step.key}.text`)}
+                  </p>
+                </div>
               );
             })}
           </div>

@@ -15,7 +15,13 @@
     "slogan": "Votre sécurité, notre passion",
     "subtitle": "Solutions de sécurité professionnelles pour la protection de vos biens, de vos événements et de vos personnes.",
     "cta_quote": "Demander un devis",
-    "cta_services": "Nos services"
+    "cta_services": "Nos services",
+    "proof": {
+      "approved": "Entreprise agréée",
+      "agents": "+500 agents",
+      "availability": "Service 24h/24",
+      "coverage": "Intervention au Mali"
+    }
   },
   "services": {
     "title": "Nos Services",
@@ -110,6 +116,72 @@
     "title": "Ils Nous Font Confiance",
     "subtitle": "Des entreprises et institutions de premier plan nous confient leur sécurité"
   },
+  "faq": {
+    "label": "Questions fréquentes",
+    "heading": "Ce que nos clients demandent souvent",
+    "description": "Quelques réponses rapides pour mieux comprendre notre manière de travailler avant de demander un devis.",
+    "items": {
+      "coverage": {
+        "question": "Intervenez-vous uniquement à Bamako ?",
+        "answer": "Rocket Security intervient à Bamako et peut organiser des dispositifs dans d'autres régions du Mali selon la mission, la durée et les besoins opérationnels."
+      },
+      "quote": {
+        "question": "Comment obtenir un devis ?",
+        "answer": "Vous pouvez nous contacter par téléphone, email ou via le formulaire du site. Nous évaluons le type de site, les horaires, les risques et le nombre d'agents nécessaires avant de proposer une solution."
+      },
+      "availability": {
+        "question": "Les services sont-ils disponibles 24h/24 ?",
+        "answer": "Oui. Nos dispositifs de gardiennage, surveillance, rondes et interventions peuvent être organisés de jour comme de nuit, y compris les week-ends et jours fériés."
+      },
+      "events": {
+        "question": "Sécurisez-vous les événements ponctuels ?",
+        "answer": "Oui. Nous pouvons assurer le contrôle d'accès, la gestion des flux, la surveillance des zones sensibles et la coordination avec les responsables de l'événement."
+      },
+      "reports": {
+        "question": "Recevons-nous un suivi après la mission ?",
+        "answer": "Selon le dispositif prévu, nos équipes peuvent fournir des comptes rendus, journaux de bord et remontées d'incidents pour garder une visibilité claire sur la mission."
+      },
+      "recruitment": {
+        "question": "Comment postuler chez Rocket Security ?",
+        "answer": "Les candidats peuvent utiliser la page Recrutement pour envoyer leurs informations et leur CV. Les profils sont étudiés selon les besoins opérationnels et les critères de sélection."
+      }
+    }
+  },
+  "operations": {
+    "label": "Secteurs d'intervention",
+    "heading": "Des dispositifs adaptés aux réalités du terrain",
+    "description": "Nous sécurisons des sites sensibles, des entreprises, des événements et des opérations mobiles avec une approche structurée, supervisée et réactive.",
+    "coverage": "Bamako et régions du Mali",
+    "team_note": "Chaque mission est encadrée par une équipe de supervision et des agents identifiés.",
+    "method_label": "Notre méthode",
+    "method_heading": "Une mission claire, du diagnostic au suivi",
+    "sectors": {
+      "banks": "Banques et institutions",
+      "mines": "Mines et chantiers",
+      "events": "Événements",
+      "businesses": "Entreprises et bureaux",
+      "retail": "Commerces",
+      "industrial": "Sites industriels"
+    },
+    "steps": {
+      "audit": {
+        "title": "Analyse du risque",
+        "text": "Nous évaluons le site, les accès, les horaires sensibles et les priorités de protection."
+      },
+      "deployment": {
+        "title": "Déploiement",
+        "text": "Nous mettons en place les agents, équipements et consignes opérationnelles adaptés."
+      },
+      "supervision": {
+        "title": "Supervision",
+        "text": "Les équipes restent coordonnées par radio, rondes, contrôles et remontées d'alerte."
+      },
+      "reporting": {
+        "title": "Suivi client",
+        "text": "Vous recevez des comptes rendus clairs pour garder une visibilité sur la mission."
+      }
+    }
+  },
   "cta": {
     "label": "Passez à l'action",
     "title": "Protégez votre entreprise dès aujourd'hui",
@@ -183,5 +255,9 @@
     "contact_us": "Contactez-nous",
     "rights": "Tous droits réservés.",
     "address": "Faladié Extension EST, Route de l'Aéroport, Bamako"
+  },
+  "mobile_contact": {
+    "call": "Appeler",
+    "email": "Email"
   }
 }

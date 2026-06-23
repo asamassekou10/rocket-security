@@ -4,25 +4,22 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 const partners = [
-  { name: 'Partner 1', logo: '/images/partners/partner-1.svg' },
-  { name: 'Partner 2', logo: '/images/partners/partner-2.svg' },
-  { name: 'Partner 3', logo: '/images/partners/partner-3.svg' },
-  { name: 'Partner 4', logo: '/images/partners/partner-4.svg' },
-  { name: 'Partner 5', logo: '/images/partners/partner-5.svg' },
-  { name: 'Partner 6', logo: '/images/partners/partner-6.svg' },
-  { name: 'Partner 7', logo: '/images/partners/partner-7.svg' },
-  { name: 'Partner 8', logo: '/images/partners/partner-8.svg' },
+  { name: 'PMU Mali', logo: '/images/partners/pmu-mali.jpeg' },
+  { name: 'ACI-SA', logo: '/images/partners/aci-sa.jpeg' },
+  { name: 'Banque Atlantique', logo: '/images/partners/banque-atlantique.jpeg' },
+  { name: 'Black Rock Mining', logo: '/images/partners/black-rock-mining.jpeg' },
+  { name: 'Comsates', logo: '/images/partners/comsates.jpeg' },
 ];
 
 function PartnerLogo({ name, logo }: { name: string; logo: string }) {
   return (
-    <div className="flex-shrink-0 mx-6 flex h-20 w-40 items-center justify-center rounded-lg glass px-6 py-4 grayscale opacity-60 transition-all duration-500 hover:grayscale-0 hover:opacity-100 hover:border-rocket-yellow/30 hover:shadow-lg hover:shadow-rocket-yellow/10">
+    <div className="flex-shrink-0 mx-5 flex h-24 w-52 items-center justify-center rounded-lg border border-white/10 bg-white px-6 py-4 opacity-85 shadow-lg shadow-black/20 transition-all duration-500 hover:opacity-100 hover:shadow-rocket-yellow/10">
       <Image
         src={logo}
         alt={name}
-        width={120}
-        height={60}
-        className="max-h-12 w-auto object-contain"
+        width={160}
+        height={80}
+        className="max-h-16 w-auto object-contain"
       />
     </div>
   );

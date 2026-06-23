@@ -13,7 +13,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-rocket-darker border-t border-rocket-gray-800 overflow-hidden">
+    <footer className="relative bg-rocket-darker border-t border-rocket-gray-800 overflow-hidden pb-16 lg:pb-0">
       {/* Gradient orbs */}
       <div className="gradient-orb gradient-orb-yellow w-[400px] h-[400px] -bottom-40 -left-20 opacity-15" />
       <div className="gradient-orb gradient-orb-amber w-[300px] h-[300px] -top-20 -right-20 opacity-10" />
