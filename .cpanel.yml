@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - /bin/bash -lc 'cd /home/r6zrkkmzadg5/rocket-security && npm install'
+    - /bin/bash -lc 'cd /home/r6zrkkmzadg5/rocket-security && npm run build:cpanel'
+    - /bin/bash -lc 'mkdir -p /home/r6zrkkmzadg5/public_html'
+    - /bin/bash -lc 'cp -R /home/r6zrkkmzadg5/rocket-security/out/. /home/r6zrkkmzadg5/public_html/'

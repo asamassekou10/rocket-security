@@ -41,3 +41,32 @@ out/
 3. Open `/fr/` and `/en/` and test navigation.
 4. Submit the contact form and confirm receipt of the email.
 5. Submit a recruitment form with a PDF and confirm the attachment arrives.
+
+## Git Deployment From cPanel
+
+The repository includes `.cpanel.yml` for cPanel Git Version Control deployments.
+
+Current cPanel paths:
+
+```text
+Repository: /home/r6zrkkmzadg5/rocket-security
+Deploy path: /home/r6zrkkmzadg5/public_html
+```
+
+The cPanel **Deploy HEAD Commit** button runs:
+
+```bash
+npm install
+npm run build:cpanel
+cp -R out/. /home/r6zrkkmzadg5/public_html/
+```
+
+After future changes:
+
+1. Commit and push to GitHub.
+2. Open cPanel → Git Version Control → `rocket-security`.
+3. Click **Update from Remote**.
+4. Click **Deploy HEAD Commit**.
+5. Test `/fr/`, `/en/`, and the forms.
+
+If deployment fails with `npm: command not found`, this cPanel account does not expose Node/npm to Git deployment tasks. In that case, build locally and upload the refreshed `release/rocket-security-cpanel-production.zip`, or use a static deploy branch that commits the generated `out/` files.
