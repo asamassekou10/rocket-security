@@ -1,0 +1,14 @@
+---
+deployment:
+  tasks:
+    - /bin/bash -lc 'mkdir -p /home/r6zrkkmzadg5/public_html'
+    - /bin/bash -lc 'cp -R /home/r6zrkkmzadg5/rocket-security/_next /home/r6zrkkmzadg5/public_html/'
+    - /bin/bash -lc 'cp -R /home/r6zrkkmzadg5/rocket-security/404 /home/r6zrkkmzadg5/public_html/'
+    - /bin/bash -lc 'cp -R /home/r6zrkkmzadg5/rocket-security/_not-found /home/r6zrkkmzadg5/public_html/'
+    - /bin/bash -lc 'cp -R /home/r6zrkkmzadg5/rocket-security/api /home/r6zrkkmzadg5/public_html/'
+    - /bin/bash -lc 'cp -R /home/r6zrkkmzadg5/rocket-security/en /home/r6zrkkmzadg5/public_html/'
+    - /bin/bash -lc 'cp -R /home/r6zrkkmzadg5/rocket-security/fr /home/r6zrkkmzadg5/public_html/'
+    - /bin/bash -lc 'cp -R /home/r6zrkkmzadg5/rocket-security/images /home/r6zrkkmzadg5/public_html/'
+    - /bin/bash -lc 'cp /home/r6zrkkmzadg5/rocket-security/404.html /home/r6zrkkmzadg5/public_html/'
+    - /bin/bash -lc 'cp /home/r6zrkkmzadg5/rocket-security/.htaccess /home/r6zrkkmzadg5/public_html/'
+    - /bin/bash -lc 'cp /home/r6zrkkmzadg5/rocket-security/_redirects /home/r6zrkkmzadg5/public_html/'
