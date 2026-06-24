@@ -20,6 +20,8 @@ import {
 import { useState } from 'react';
 import Image from 'next/image';
 
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/alhassane.samassekou@gmail.com';
+
 const whyIcons = {
   training: GraduationCap,
   career: TrendingUp,
@@ -46,10 +48,18 @@ export default function RecruitmentPage() {
     setIsSubmitting(true);
     setSubmitError(false);
 
+    const formData = new FormData(e.currentTarget);
+    formData.append('_subject', '[Rocket Security] Candidature');
+    formData.append('_template', 'table');
+    formData.append('_captcha', 'false');
+
     try {
-      const response = await fetch('/api/submit.php', {
+      const response = await fetch(FORM_ENDPOINT, {
         method: 'POST',
-        body: new FormData(e.currentTarget),
+        headers: {
+          Accept: 'application/json',
+        },
+        body: formData,
       });
 
       if (!response.ok) {

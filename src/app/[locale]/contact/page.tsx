@@ -15,6 +15,8 @@ import {
 } from 'lucide-react';
 import { useState } from 'react';
 
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/alhassane.samassekou@gmail.com';
+
 export default function ContactPage() {
   const t = useTranslations('contact');
   const [submitted, setSubmitted] = useState(false);
@@ -26,10 +28,18 @@ export default function ContactPage() {
     setIsSubmitting(true);
     setSubmitError(false);
 
+    const formData = new FormData(e.currentTarget);
+    formData.append('_subject', '[Rocket Security] Demande contact');
+    formData.append('_template', 'table');
+    formData.append('_captcha', 'false');
+
     try {
-      const response = await fetch('/api/submit.php', {
+      const response = await fetch(FORM_ENDPOINT, {
         method: 'POST',
-        body: new FormData(e.currentTarget),
+        headers: {
+          Accept: 'application/json',
+        },
+        body: formData,
       });
 
       if (!response.ok) {
