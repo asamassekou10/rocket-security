@@ -45,6 +45,7 @@ if ($formType === 'contact' && $message === '') {
 
 $recipient = 'alhassane.samassekou@gmail.com';
 $sender = 'contact@rocketsecurity.net';
+$backupRecipient = 'contact@rocketsecurity.net';
 $safeName = substr($name, 0, 150);
 $safePhone = substr($phone, 0, 60);
 $safeMessage = substr($message, 0, 5000);
@@ -74,6 +75,8 @@ $headers = [
     'From: Rocket Security Website <' . $sender . '>',
     'Reply-To: ' . $email,
     'Return-Path: ' . $sender,
+    'Bcc: ' . $backupRecipient,
+    'X-Rocket-Security-Form: ' . $formType,
     'MIME-Version: 1.0',
 ];
 
