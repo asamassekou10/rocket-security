@@ -44,7 +44,7 @@ if ($formType === 'contact' && $message === '') {
 }
 
 $recipient = 'alhassane.samassekou@gmail.com';
-$sender = 'no-reply@rocketsecurity.net';
+$sender = 'contact@rocketsecurity.net';
 $safeName = substr($name, 0, 150);
 $safePhone = substr($phone, 0, 60);
 $safeMessage = substr($message, 0, 5000);
