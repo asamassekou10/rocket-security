@@ -20,7 +20,7 @@ import {
 import { useState } from 'react';
 import Image from 'next/image';
 
-const FORM_ENDPOINT = 'https://formsubmit.co/ajax/alhassane.samassekou@gmail.com';
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/contact@rocketsecurity.net';
 
 const whyIcons = {
   training: GraduationCap,

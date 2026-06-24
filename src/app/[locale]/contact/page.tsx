@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import { useState } from 'react';
 
-const FORM_ENDPOINT = 'https://formsubmit.co/ajax/alhassane.samassekou@gmail.com';
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/contact@rocketsecurity.net';
 
 export default function ContactPage() {
   const t = useTranslations('contact');
