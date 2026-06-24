@@ -43,21 +43,54 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'metadata' });
+  const title = t('title');
+  const description = t('description');
+  const path = `/${locale}`;
+  const ogImages = [
+    {
+      url: '/images/og/rocket-security-og.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Rocket Security agents in Bamako, Mali',
+    },
+    {
+      url: '/images/og/rocket-security-services-og.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Rocket Security team briefing and operations',
+    },
+    {
+      url: '/images/og/rocket-security-recruitment-og.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Rocket Security recruitment and training session',
+    },
+  ];
 
   return {
+    metadataBase: new URL('https://rocketsecurity.net'),
     title: {
-      default: t('title'),
+      default: title,
       template: `%s | Rocket Security`,
     },
-    description: t('description'),
+    description,
     openGraph: {
-      title: t('title'),
-      description: t('description'),
+      title,
+      description,
+      url: path,
       locale: locale === 'fr' ? 'fr_ML' : 'en_US',
       type: 'website',
       siteName: 'Rocket Security',
+      images: ogImages,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImages[0].url],
     },
     alternates: {
+      canonical: path,
       languages: {
         fr: '/fr',
         en: '/en',
