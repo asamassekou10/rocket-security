@@ -44,6 +44,7 @@ if ($formType === 'contact' && $message === '') {
 }
 
 $recipient = 'alhassane.samassekou@gmail.com';
+$sender = 'no-reply@rocketsecurity.net';
 $safeName = substr($name, 0, 150);
 $safePhone = substr($phone, 0, 60);
 $safeMessage = substr($message, 0, 5000);
@@ -70,16 +71,13 @@ $bodyText = implode("\r\n", $body);
 
 $boundary = 'rocket_' . bin2hex(random_bytes(12));
 $headers = [
-    'From: Rocket Security Website <no-reply@rocketsecurity.net>',
+    'From: Rocket Security Website <' . $sender . '>',
     'Reply-To: ' . $email,
+    'Return-Path: ' . $sender,
     'MIME-Version: 1.0',
-    'Content-Type: multipart/mixed; boundary="' . $boundary . '"',
 ];
 
-$emailBody = '--' . $boundary . "\r\n";
-$emailBody .= "Content-Type: text/plain; charset=UTF-8\r\n";
-$emailBody .= "Content-Transfer-Encoding: 8bit\r\n\r\n";
-$emailBody .= $bodyText . "\r\n";
+$emailBody = $bodyText;
 
 if ($formType === 'recruitment') {
     if (!isset($_FILES['cv']) || $_FILES['cv']['error'] !== UPLOAD_ERR_OK) {
@@ -99,16 +97,26 @@ if ($formType === 'recruitment') {
 
     $attachment = chunk_split(base64_encode((string) file_get_contents($cv['tmp_name'])));
     $fileName = preg_replace('/[^A-Za-z0-9._-]/', '_', basename($cv['name']));
+    $headers[] = 'Content-Type: multipart/mixed; boundary="' . $boundary . '"';
+    $emailBody = '--' . $boundary . "\r\n";
+    $emailBody .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $emailBody .= "Content-Transfer-Encoding: 8bit\r\n\r\n";
+    $emailBody .= $bodyText . "\r\n";
     $emailBody .= '--' . $boundary . "\r\n";
     $emailBody .= "Content-Type: application/pdf; name=\"" . $fileName . "\"\r\n";
     $emailBody .= "Content-Disposition: attachment; filename=\"" . $fileName . "\"\r\n";
     $emailBody .= "Content-Transfer-Encoding: base64\r\n\r\n";
     $emailBody .= $attachment . "\r\n";
+    $emailBody .= '--' . $boundary . "--\r\n";
+} else {
+    $headers[] = 'Content-Type: text/plain; charset=UTF-8';
+    $headers[] = 'Content-Transfer-Encoding: 8bit';
 }
 
-$emailBody .= '--' . $boundary . "--\r\n";
+$sent = mail($recipient, $subject, $emailBody, implode("\r\n", $headers), '-f' . $sender);
 
-if (!mail($recipient, $subject, $emailBody, implode("\r\n", $headers))) {
+if (!$sent) {
+    error_log('Rocket Security form mail failed for ' . $formType . ' from ' . $email);
     respond(500, 'Unable to send message.');
 }
 
